@@ -1,0 +1,8 @@
+from django.db import models
+
+# Create your models here.
+class Review(models.Model):
+    name = models.CharField(max_length=100)
+    comment = models.TextField()
+    rating = models.PositiveSmallIntegerField(default=5)
+    created_at = models.DateTimeField(auto_now_add=True)

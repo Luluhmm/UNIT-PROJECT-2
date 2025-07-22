@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}T3beer{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+
+  <style>
+    body { font-family: 'Cairo', sans-serif; }
+  </style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+      new Swiper('.swiper', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+    });
+  </script>
+  
+
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- my navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 text-white py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6">
+      
+      <div class="text-3xl font-bold tracking-wider text-white font-[Cairo]">
+        <a href="/" class="text-white">تعبير</a>
+      </div>
+  
+      <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-8 text-lg font-medium">
+        <a href="/moods/all/" class="hover:scale-105 transition transform">All Moods</a>
+        <a href="/about/" class="hover:scale-105 transition transform">About Us</a>
+        <a href="/contact/" class="hover:scale-105 transition transform">Contact Us</a>
+      </div>
+  
+      <div>
+        <a href="{% url 'moods:express' %}"
+           class="bg-purple-200/20 text-purple-100 border border-purple-300 px-4 py-2 rounded-lg font-semibold flex items-center gap-1 hover:bg-purple-200/40 transition backdrop-blur-sm">
+          <span class="material-icons text-base">edit</span> Express
+        </a>
+      </div>
+  
+    </div>
+  </nav>
+  
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white py-10 mt-16 border-t">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 text-sm text-gray-600 px-6">
+      <div>
+        <h4 class="font-semibold mb-2">T3beer</h4>
+        <div class="mt-4 flex space-x-2">
+          <a href="#" class="fa fa-facebook text-gray-600 hover:text-gray-900"></a>
+          <a href="#" class="fa fa-linkedin text-gray-600 hover:text-gray-900"></a>
+          <a href="#" class="fa fa-youtube-play text-gray-600 hover:text-gray-900"></a>
+          <a href="#" class="fa fa-instagram text-gray-600 hover:text-gray-900"></a>
+        </div>
+        <p class="mt-4 text-xs text-gray-500">&copy; 2025 T3beer. Made with love in Riyadh 💜</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Explore</h4>
+        <ul>
+          <li><a href="/moods/all/">All Moods</a></li>
+          <li><a href="/express/">Express Mood</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Resources</h4>
+        <ul>
+          <li><a href="#">Tips</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Support</h4>
+        <ul>
+          <li><a href="/contact/">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>
+
+
