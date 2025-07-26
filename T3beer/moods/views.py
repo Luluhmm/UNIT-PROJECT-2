@@ -4,6 +4,7 @@ from .models import MoodEntry
 from nltk.sentiment import SentimentIntensityAnalyzer
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
+from .sentiment_utils import analyze_mood
 
 # Create your views here.
 
@@ -15,24 +16,17 @@ def express_mood(request):
         form = MoodEntryForm(request.POST)
         if form.is_valid():
             text = form.cleaned_data['text']
-            sia = SentimentIntensityAnalyzer()
-            score = sia.polarity_scores(text)['compound']
-
-            if score >= 0.5:
-                mood = "Happy"
-            elif score <= -0.5:
-                mood = "Sad"
-            else:
-                mood = "Neutral"
+            mood = analyze_mood(text)
 
             entry = form.save(commit=False)
             entry.mood = mood
             entry.save()
             return redirect('moods:result', entry.id)
     else:
-        form = MoodEntryForm()
+        form = MoodEntryForm() 
 
     return render(request, 'moods/express.html', {'form': form})
+
 
 
 
@@ -41,8 +35,8 @@ def mood_result(request, id):
     mood = entry.mood
 
     #to see how many people felt the same today
-    today = timezone.now().date()
-    same_mood_count = MoodEntry.objects.filter(mood=mood, created_at__date=today).count()
+    # today = timezone.now().date()
+    # same_mood_count = MoodEntry.objects.filter(mood=mood, created_at__date=today).count()
 
     affirmations = {
         "Happy": "Keep shining! You’re a light in this world.",
@@ -58,7 +52,7 @@ def mood_result(request, id):
 
     return render(request, 'moods/result.html', {
         'entry': entry,
-        'count': same_mood_count,
+        #  'count': same_mood_count,
         'affirmation': affirmations.get(mood, ""),
         'song': songs.get(mood, "#"),
     })
