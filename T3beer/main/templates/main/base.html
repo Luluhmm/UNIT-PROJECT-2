@@ -85,6 +85,16 @@
     }
   });
 </script>
+
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    AOS.init();
+  });
+</script>
+
 </head>
 
 <body class="{% block body_class %}bg-white text-gray-800 font-sans{% endblock %}">
@@ -100,7 +110,7 @@
       <div class="w-full sm:w-auto flex justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-lg font-medium space-x-4 sm:space-x-8 mt-2 sm:mt-0">
         <a href="{% url 'main:all_posts' %}" class="hover:scale-105 transition transform">Posts</a>
         <a href="{% url 'main:games_list' %}" class="hover:scale-105 transition transform">Games</a>
-        <a href="/about/" class="hover:scale-105 transition transform">About Us</a>
+        <a href="{% url 'main:about' %}" class="hover:scale-105 transition transform">About Us</a>
         <a href="{% url 'main:contact' %}" class="hover:scale-105 transition transform">Contact Us</a>
       </div>
   

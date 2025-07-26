@@ -46,7 +46,7 @@ def mood_result(request, id):
 
     songs = {
         "Happy": "https://www.youtube.com/watch?v=ZbZSe6N_BXs",
-        "Sad": "https://www.youtube.com/watch?v=ho9rZjlsyYY",
+        "Sad": "https://youtu.be/IQLLbTZ0tG0?si=eIQ5QIxU-slnbHtA",
         "Neutral": "https://www.youtube.com/watch?v=2Vv-BfVoq4g",
     }
 
