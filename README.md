@@ -1,9 +1,9 @@
-# T3beer – Emotional Wellness & Mood Detection Platform
+# T3beer – Mood Detection & Emotional Wellness Platform
 
 ## Overview  
-T3beer is a web-based emotional wellness platform that allows users to express how they feel and receive thoughtful responses tailored to their emotional state—Happy, Sad, or Neutral. It’s not just about mood detection, but about making users feel heard and supported.
+T3beer is a web-based platform focused on emotional wellness, designed to help users express themselves freely and receive thoughtful responses based on their mood. The platform uses a simple natural language input to detect a user’s emotional state—Happy, Sad, or Neutral—and tailors the experience accordingly.
 
-The platform focuses on user care and mental health, providing a smooth, supportive, and interactive space to reflect, relax, and contribute positively to others' well-being.
+More than just a mood detector, T3beer is a space where users are heard, encouraged, and uplifted. It was designed with the user’s journey in mind, to make emotional expression smooth, supportive, and interactive.
 
 ---
 
@@ -20,14 +20,14 @@ The platform focuses on user care and mental health, providing a smooth, support
 
 ## Users & Their Roles  
 **As a User, I can:**
-- Express how I feel through a text input.
-- Receive real-time mood detection.
-- Get personalized suggestions based on my mood.
-- Explore and search community posts.
-- Play relaxing external games.
-- Submit feedback through a review form.
-- Contact the platform for help or ideas.
-- Learn about the purpose behind T3beer.
+- Express how I feel by entering free text into the platform.
+- Get real-time mood analysis (Happy, Sad, Neutral) based on what I write.
+- Receive tailored content depending on my mood (suggested actions, games, or posts)
+- Explore mental health Posts shared by others and filter/search them easily..
+- Relax and unwind through a selection of calming and creative Games.
+- Submit feedback via a Review form to help improve the platform.
+- Reach out directly using the Contact Us page for questions or support.
+- Learn more about the platform and its mission on the About Us page.
 
 ---
 
@@ -36,7 +36,7 @@ The platform focuses on user care and mental health, providing a smooth, support
 2. Click **"Express Your Mood"** and write about your feelings.  
 3. Based on the result:
    - **Sad** → You’ll see suggestions for relaxing games or therapy, and get to choose what you need.
-   - **Neutral** → You’ll receive affirmations or gentle prompts.
+   - **Neutral** → You’ll receive affirmations and a song to listen to.
    - **Happy** → You’ll be invited to share uplifting content to inspire others.
 4. Explore other sections:
    - **Posts** → Filter/search helpful tips and stories.
@@ -48,13 +48,13 @@ The platform focuses on user care and mental health, providing a smooth, support
 ---
 
 ## User Stories  
-📄 [View User Stories PDF](link-to-user-stories.pdf)
+📄 [View User Stories PDF](https://github.com/Luluhmm/UNIT-PROJECT-2/blob/main/docs/T3beer%20User%20Story.pdf)
 
 ## UML Diagram  
-📄 [View UML Diagram PDF](link-to-uml-diagram.pdf)
+📄 [View UML Diagram PDF](https://github.com/Luluhmm/UNIT-PROJECT-2/blob/main/docs/T3beer_UML.pdf)
 
 ## Wireframe  
-📄 [View Wireframe PDF](link-to-wireframe.pdf)
+📄 [View Wireframe PDF](https://github.com/Luluhmm/UNIT-PROJECT-2/blob/main/docs/T3beerWireframe.pdf)
 
 ---
 
@@ -68,9 +68,9 @@ The platform focuses on user care and mental health, providing a smooth, support
 ---
 
 ## Why Lulwah Built This  
-As a computer science student at **Tuwaiq Academy**, Lulwah envisioned a platform that truly *cares* for the user's emotional journey. T3beer was built as a digital space that supports mental wellness, helping people pause, reflect, and feel uplifted—even during difficult moments.
+As a Saudi computer sciencetist, Lulwah was driven by the belief that technology should care about people, especially in times when mental wellness is more important than ever.
 
-It’s more than a project—it’s a mission to use technology in a meaningful, human-centered way.
+T3beer was born out of her desire to build a platform that helps people pause, reflect, and feel supported in a safe, welcoming space. It represents a personal mission: using tech not just to solve problems—but to support emotions, create joy, and inspire community connection.
 
 
 
