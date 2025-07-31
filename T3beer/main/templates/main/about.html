@@ -6,11 +6,11 @@
 
 <section class="relative min-h-screen">
   <!-- background -->
-  <video id="bgVideo" autoplay muted loop playsinline  controlslist="nodownload"
+  <!-- <video id="bgVideo" autoplay muted loop playsinline  controlslist="nodownload"
   class="pointer-events-none absolute w-full h-full object-cover brightness-75"  preload="auto">
   <source src="{% static 'videos/hero5.mp4' %}" type="video/mp4">
   Your browser does not support the video tag.
-  </video>
+  </video> -->
 
 
   <!-- overlay ontent -->
@@ -19,6 +19,12 @@
     <p class="text-lg md:text-xl max-w-2xl animate-fade-in-up">Bringing emotions to life through colors, affirmations, and community. Your mood matters, and we're here to make it better.</p>
   </div>
 </section>
+
+<video id="bgVideo" autoplay muted loop playsinline  controlslist="nodownload"
+class=" absolute w-full h-full object-cover brightness-75"  preload="auto">
+<source src="{% static 'videos/hero5.mp4' %}" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 
 <section class="py-20 px-6 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
