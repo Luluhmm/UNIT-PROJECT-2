@@ -1,9 +1,10 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from django.conf import settings
+import os
 
-#nltk.download('vader_lexicon')
 
-sia = SentimentIntensityAnalyzer()
+sia = SentimentIntensityAnalyzer(os.path.join(settings.BASE_DIR, "moods/nltk_data/sentiment/vader_lexicon.txt"))
 
 def analyze_mood(text):
     scores = sia.polarity_scores(text)
