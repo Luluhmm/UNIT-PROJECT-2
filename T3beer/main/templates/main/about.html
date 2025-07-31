@@ -3,10 +3,17 @@
 {% block title %}About Us{% endblock %}
 
 {% block content %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const video = document.getElementById("bgVideo");
+    video.removeAttribute("controls");  
+    video.controls = false;             
+  });
+</script>
 <section class="relative min-h-screen">
   <!-- background -->
-  <video autoplay muted loop playsinline disablePictureInPicture 
-  class="pointer-events-none absolute w-full h-full object-cover brightness-75" style="pointer-events: none;">
+  <video id="bgVideo" autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplay"
+  class="pointer-events-none absolute w-full h-full object-cover brightness-75"  preload="auto">
   <source src="{% static 'videos/hero5.mp4' %}" type="video/mp4">
   Your browser does not support the video tag.
   </video>
