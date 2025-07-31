@@ -10,6 +10,14 @@
     video.controls = false;             
   });
 </script>
+
+<style>
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+</style>
+
+
 <section class="relative min-h-screen">
   <!-- background -->
   <video id="bgVideo" autoplay muted loop playsinline disablePictureInPicture controlslist="nodownload nofullscreen noremoteplay"

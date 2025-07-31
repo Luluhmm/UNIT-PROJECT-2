@@ -12,7 +12,12 @@
   });
 </script>
 
-
+<style>
+  video::-webkit-media-controls {
+    display: none !important;
+  }
+</style>
+ 
 <section class="relative h-screen w-full overflow-hidden">
     <!-- Video Background -->
     <video id="bgVideo" autoplay muted loop playsinline disablePictureInPicture  controlslist="nodownload nofullscreen noremoteplay" class="pointer-events-none absolute top-0 left-0 w-full h-full object-cover z-0 brightness-75" preload="auto" >
