@@ -1,7 +1,7 @@
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
-nltk.download('vader_lexicon')
+#nltk.download('vader_lexicon')
 
 sia = SentimentIntensityAnalyzer()
 
