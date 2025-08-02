@@ -84,36 +84,56 @@
       });
     }
   });
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+
 </script>
 
 
 </head>
 <body class="{% block body_class %}bg-white text-gray-800 font-sans{% endblock %}">
+   <!-- my navbar -->
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-white py-4 transition-colors duration-300">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 flex-wrap">
 
-  <!-- my navbar -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 text-white py-4 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 flex-wrap">
-  
-      <div class="text-3xl font-bold tracking-wider text-white font-[Cairo] transform transition duration-300 hover:scale-110 mb-2 sm:mb-0">
-        <a href="/" class="text-white">تعبير</a>
-      </div>
-  
-      <div class="w-full sm:w-auto flex justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-lg font-medium space-x-4 sm:space-x-8 mt-2 sm:mt-0">
-        <a href="{% url 'main:all_posts' %}" class="hover:scale-105 transition transform">Posts</a>
-        <a href="{% url 'main:games_list' %}" class="hover:scale-105 transition transform">Games</a>
-        <a href="{% url 'main:about' %}" class="hover:scale-105 transition transform">About Us</a>
-        <a href="{% url 'main:contact' %}" class="hover:scale-105 transition transform">Contact Us</a>
-      </div>
-  
-      <div class="mt-2 sm:mt-0">
-        <a href="{% url 'moods:express' %}"
-           class="bg-purple-200/20 text-purple-100 border border-purple-300 px-4 py-2 rounded-lg font-semibold flex items-center gap-1 hover:bg-purple-200/40 hover:text-purple-700 transition backdrop-blur-sm">
-          <span class="material-icons text-base">edit</span> Express
-        </a>
-      </div>
-  
+    <div class="text-3xl font-bold tracking-wider text-white font-[Cairo] transform transition duration-300 hover:scale-110 mb-2 sm:mb-0">
+      <a href="/" class="text-white">تعبير</a>
     </div>
-  </nav>
+
+    <div class="sm:hidden">
+      <button onclick="toggleMobileMenu()" class="text-white focus:outline-none">
+        <span class="material-icons text-3xl">menu</span>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="w-full sm:w-auto sm:flex justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-lg font-medium space-y-2 sm:space-y-0 sm:space-x-8 mt-2 sm:mt-0 hidden sm:block">
+      <a href="{% url 'main:all_posts' %}" class="block sm:inline hover:scale-105 transition transform">Posts</a>
+      <a href="{% url 'main:games_list' %}" class="block sm:inline hover:scale-105 transition transform">Games</a>
+      <a href="{% url 'main:about' %}" class="block sm:inline hover:scale-105 transition transform">About Us</a>
+      <a href="{% url 'main:contact' %}" class="block sm:inline hover:scale-105 transition transform">Contact Us</a>
+      <div class="block sm:hidden mt-2">
+      <a href="{% url 'moods:express' %}"
+          class="w-full text-center bg-purple-200/20 text-purple-700 border border-purple-300 px-4 py-2 rounded-lg font-semibold flex justify-center items-center gap-1 hover:bg-purple-200/40 transition backdrop-blur-sm">
+        <span class="material-icons text-base">edit</span> Express
+      </a>
+      </div>
+
+    </div>
+
+    <!-- Express Button -->
+    <div class="mt-2 sm:mt-0 hidden sm:block">
+    <a href="{% url 'moods:express' %}"
+        class="bg-purple-200/20 text-purple-100 border border-purple-300 px-4 py-2 rounded-lg font-semibold flex items-center gap-1 hover:bg-purple-200/40 hover:text-purple-700 transition backdrop-blur-sm">
+      <span class="material-icons text-base">edit</span> Express
+    </a>
+    </div>
+
+
+  </div>
+</nav>
   
   
 
