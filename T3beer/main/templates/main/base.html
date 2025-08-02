@@ -62,33 +62,55 @@
 
 <script>
   // for my navbar transitions
-  window.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function () {
     const navbar = document.getElementById('navbar');
     const links = navbar.querySelectorAll('a');
+    const burger = document.getElementById('burger-icon');
+    const burgerIcon = document.getElementById('burger-icon-span');
+    const logo = document.getElementById('logo-text');
 
-    if (window.scrollY > 100) {
-      navbar.classList.remove('text-white');
-      navbar.classList.add('text-purple-700', 'bg-white/90', 'backdrop-blur');
+      if (window.scrollY > 100) {
+    navbar.classList.remove('text-white');
+    navbar.classList.add('text-purple-700', 'bg-white/90', 'backdrop-blur');
 
-      links.forEach(link => {
-        link.classList.remove('text-white');
-        link.classList.add('text-purple-700');
-      });
-    } else {
-      navbar.classList.remove('text-purple-700', 'bg-white/90', 'backdrop-blur');
-      navbar.classList.add('text-white');
-
-      links.forEach(link => {
-        link.classList.remove('text-purple-700');
-        link.classList.add('text-white');
-      });
+    links.forEach(link => {
+    if (window.innerWidth >= 640) { 
+      link.classList.remove('text-white');
+      link.classList.add('text-purple-700');
     }
-  });
+    });
 
-  function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    menu.classList.toggle('hidden');
-  }
+    if (burgerIcon) burgerIcon.classList.add('text-purple-700');
+    if (burgerIcon) burgerIcon.classList.remove('text-white');
+    if (logo) {
+      logo.classList.remove('text-white');
+      logo.classList.add('text-purple-700');
+      }
+    } 
+    else {
+    navbar.classList.remove('text-purple-700', 'bg-white/90', 'backdrop-blur');
+    navbar.classList.add('text-white');
+
+    links.forEach(link => {
+    if (window.innerWidth >= 640) {
+      link.classList.remove('text-purple-700');
+      link.classList.add('text-white');
+    }
+    });
+
+    if (burgerIcon) burgerIcon.classList.remove('text-purple-700');
+    if (burgerIcon) burgerIcon.classList.add('text-white');
+    if (logo) {
+      logo.classList.remove('text-purple-700');
+      logo.classList.add('text-white');
+      }
+    }
+    });
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      menu.classList.toggle('hidden');
+    }
 
 </script>
 
@@ -100,16 +122,17 @@
   <div class="max-w-7xl mx-auto flex items-center justify-between px-6 flex-wrap">
 
     <div class="text-3xl font-bold tracking-wider text-white font-[Cairo] transform transition duration-300 hover:scale-110 mb-2 sm:mb-0">
-      <a href="/" class="text-white">تعبير</a>
+      <a href="/" class="text-white" id="logo-text">تعبير</a>
     </div>
 
     <div class="sm:hidden">
-      <button onclick="toggleMobileMenu()" class="text-white focus:outline-none">
-        <span class="material-icons text-3xl">menu</span>
-      </button>
+      <button onclick="toggleMobileMenu()" id="burger-icon" class="focus:outline-none transition-colors duration-300">
+        <span class="material-icons text-3xl" id="burger-icon-span">menu</span>
+      </button>      
     </div>
 
-    <div id="mobile-menu" class="w-full sm:w-auto sm:flex justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-lg font-medium space-y-2 sm:space-y-0 sm:space-x-8 mt-2 sm:mt-0 hidden sm:block">
+    <div id="mobile-menu"  class="w-full sm:w-auto sm:flex justify-center sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2 text-lg font-medium space-y-2 sm:space-y-0 sm:space-x-8 mt-2 sm:mt-0 hidden sm:block 
+            bg-white text-purple-700 sm:bg-transparent sm:text-inherit rounded-md shadow-md p-4 sm:p-0 z-40">
       <a href="{% url 'main:all_posts' %}" class="block sm:inline hover:scale-105 transition transform">Posts</a>
       <a href="{% url 'main:games_list' %}" class="block sm:inline hover:scale-105 transition transform">Games</a>
       <a href="{% url 'main:about' %}" class="block sm:inline hover:scale-105 transition transform">About Us</a>
